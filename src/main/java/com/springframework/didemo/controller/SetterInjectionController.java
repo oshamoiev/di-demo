@@ -2,6 +2,7 @@ package com.springframework.didemo.controller;
 
 import com.springframework.didemo.service.HelloService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -13,7 +14,7 @@ public class SetterInjectionController {
     }
 
     @Autowired
-    public void setHelloService(HelloService helloService) {
+    public void setHelloService(@Qualifier("setterHelloService")HelloService helloService) {
         this.helloService = helloService;
     }
 }
